@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/minhaConta.css">
+    <title>Delivery</title>
+</head>
+<body>{{#each admin}}
+    <header>
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/menu/{{loginUser}}/{{senhaUser}}">Voltar</a>
+           </div>
+      
+            <div class="menu">
+
+                <form action="/update/credAdmin/{{loginUser}}/{{senhaUser}}" method="post">
+                   
+                        <p>Login</p>
+                <input type="text" value="{{loginUser}}" placeholder="Login" name="login" id="nome">
+                        <p>Senha</p>
+                <input type="password" placeholder="Senha" name="senha" id="senhaConfirmar"> 
+
+                <button id="btnCad">Atualizar</button>
+                   
+                </form>
+
+            </div>
+
+    </header>
+           {{/each}}
+</body>
+<script src="/views/js/adminFile.js"></script>
+</html>

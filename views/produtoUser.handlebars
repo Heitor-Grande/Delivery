@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/produtos.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/categorias/{{letTokenUser}}">Voltar</a>
+           </div>
+            {{#each produto}}
+            <a href="/det_produto/{{../letTokenUser}}/{{id}}/{{../pagAtual}}">
+            <div class="menu">
+                <img src="/views/uploads/produto/{{imagem}}" alt="">
+                <p class="nomeProduto">{{nome}}</p>
+                <p class="descProduto">{{desc}}</p>
+                <p class="precoProduto">R${{preco}}</p>
+            </div>
+            </a>
+            {{/each}}
+
+    {{#each user}}
+            <div id="pag">
+                    <a href="/produtos/{{../categoria}}/{{token}}/{{../anteriorPagina}}">Voltar</a>
+                    <input type="text" name="paginaAtual" id="" value="{{../pagAtual}}" disabled>
+                    <a href="/produtos/{{../categoria}}/{{token}}/{{../proximaPagina}}">Avançar</a>
+            </div>
+    {{/each}}
+    </header>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/minhaConta.css">
+    <title>Delivery</title>
+</head>
+<body>{{#each admin}}
+    <header>
+             {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/menu/{{loginUser}}/{{senhaUser}}">Voltar</a>
+           </div>
+
+            
+            <div class="menu">
+                <form action="/cad/categoria/{{loginUser}}/{{senhaUser}}" method="post" enctype="multipart/form-data">
+                  
+                        <p>Imagem Ilustrativa (1)</p>
+                <input type="file" id="ImgInput" name="imgCategoria">
+                        <p>Nome da categoria</p>
+                <input type="text" value="" name="nome" placeholder="Salgado, sobremesa...">
+
+                <button id="btnCad">Cadastrar</button>
+                
+                </form>
+
+            </div>
+
+    </header>
+    {{/each}}
+</body>
+</html>

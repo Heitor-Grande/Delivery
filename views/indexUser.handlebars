@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/index.css">
+    <title>Delivery</title>
+</head>
+<body>  {{#each user}}
+         <header>
+
+            <h4>Delivery</h4>
+
+           <div id="horario">
+            {{#each ../infoDelivery}}
+                <p>Horário de funcionamento</p>
+                <p>{{horarioAbertura}} às {{horarioFechamento}}</p>
+                <p>{{endereco}}</p>
+                <p>{{mensagem}}</p>
+            {{/each}}
+            <button id="setup_button">Installar App (Android)</button>
+           </div>
+
+            <a href="/categorias/{{token}}">
+                <div class="menu">
+                <img src="/views/images/7729570d29866a51b75c55e91d733364.png" alt="">
+                <p>Ver menu</p>
+            </div>
+            </a>
+
+            <a href="/info/{{token}}">
+                <div class="menu">
+                <img src="/views/images/4a35544fade4fa0e81416d56b4c760d7-removebg-preview.png" alt="">
+                <p>Informações</p>
+            </div>
+            </a>
+
+            <a href="/minhaConta/{{token}}">
+                <div class="menu">
+                <img src="/views/images/74472.png" alt="">
+                <p>Minha conta</p>
+            </div>
+            </a>
+
+            <a href="/Meus/{{token}}">
+                <div class="menu">
+                <img src="/views/images/png-transparent-computer-icons-computer-software-purchase-order-icon-angle-white-text.png" alt="">
+                <p>Pedidos</p>
+            </div>
+            </a>
+
+    </header>
+    {{/each}}
+</body>
+<script src="/sw.js"></script>
+<script src="/views/js/mainInstall.js"></script>
+</html>

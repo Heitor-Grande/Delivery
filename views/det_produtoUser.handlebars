@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/det_produto.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+            {{#each infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+        {{#each produto}}
+           <div id="voltar">
+                <a href="/produtos/{{categoria}}/{{../letTokenUser}}/{{../pagAtual}}">Voltar</a>
+           </div>
+        {{/each}}
+
+    {{#each user}}
+        {{#each ../produto}}
+            <div class="menu">
+                <img src="/views/uploads/produto/{{imagem}}" alt="">
+
+
+
+                <p class="nomeProduto">{{nome}}</p>
+                <p class="descProduto">{{desc}}</p>
+
+                <form action="/CriarPedido/{{../token}}/{{id}}" method="post">
+                    <div id="quantidadeCalc">
+                        <button id="menos" type="button">-</button>
+                        <input type="text" name="quantidade" value="1" id="quantidade">
+                        <input type="text" id="precoUnidade" value="{{preco}}" hidden>
+                        <button id="mais" type="button">+</button>
+                    </div>
+
+                    <p class="precoProduto">R${{preco}}</p>
+
+                    <button id="addPedido">Adicionar ao pedido</button>
+                </form>
+            </div>
+        {{/each}}
+    {{/each}}
+           
+    </header>
+</body>
+<script src="/views/js/det_produto.js"></script>
+</html>

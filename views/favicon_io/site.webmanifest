@@ -1,0 +1,11 @@
+{"name":"Delivery App",
+"short_name":"Delivery",
+"description": "Pwa delivery",
+"start_url": "/",
+"icons":[{"src":"/views/favicon_io/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},
+{"src":"/views/favicon_io/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],
+"theme_color":"#646464",
+"background_color":"#646464",
+"display":"standalone",
+"prefer_related_applications": false
+}

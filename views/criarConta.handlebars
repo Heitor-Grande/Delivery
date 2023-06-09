@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/criarConta.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            {{#each infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+           <div id="horario">
+                 <p>Crie sua conta ou faça o login para continuar pedindo!</p>
+           </div>
+
+            <div id="voltar">
+                <a href="/">Voltar</a>
+           </div>
+
+            <div class="menu">
+                <form action="/Insert/User" method="post" id="formCont">
+                    <p>Nome completo</p>
+                <input type="text" placeholder="seu nome completo" name="nome" id="nome">
+                    <p>Telefone</p>
+                    <input type="text" placeholder="telefone" name="telefone" id="telefone">
+                    <p>E-mail</p>
+                <input type="text" placeholder="seu email de preferencia" name="email" id="email">
+                    <p>Senha</p>
+                <input type="password" placeholder="sua senha de preferencia" name="senha" id="senha">
+                    <p>Confirmar senha</p>
+                <input type="password" placeholder="confirme sua senha de preferencia" name="senhaConfirmar" id="senhaConfirmar"> 
+
+                <button id="btnCad">Criar conta</button>
+                </form>
+            </div>
+
+
+
+    </header>
+</body>
+<script src="/views/js/criarConta.js"></script>
+</html>

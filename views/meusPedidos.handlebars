@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/meusPedidos.css">
+
+    <title>Document</title>
+</head>
+<body>{{#each user}}
+    <header>
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/{{token}}">Voltar</a>
+            </div>
+
+          
+            <div class="menu">
+                <p>Meus pedidos</p>
+
+                {{#each ../pedido}}
+                 <div class="pedido">
+                        <a href="/ver/finalizar/{{token_pedido}}/{{../token}}">
+                            <p>{{dataReal}} - Pedido {{token_pedido}}</p>
+                            <p>{{status}}</p> 
+                        </a>  
+                </div>
+                {{/each}}
+            </div>
+
+    </header>
+    {{/each}}
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/finalizar.css">
+
+    <title>Document</title>
+</head>
+<body>{{#each user}}
+    <header>
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/Meus/{{token}}">Voltar</a>
+            </div>
+       {{/each}}
+          
+            <div class="menu">
+                <p>Finalizando</p>
+
+                 <div class="pedido">
+                    {{#each pedido}}
+
+                        <div id="detalhes">
+                            <h4>Resumo</h4>
+                            {{#each ../infoDelivery}}
+                            <p>Taxa de entrega: R${{taxaEntrega}}</p>
+                            {{/each}}
+                            <p>Total: R${{../totalFormatado}}</p>
+                        </div>
+
+
+                        <form action="/finalizar/{{token_user}}/{{token_pedido}}" method="post">
+                            <h4>Endereço para entrega</h4>
+                                    <p>Cidade</p>
+                                
+                            <select name="cidade">
+                                {{#each ../cidades}}
+                                    <option value="{{cidade}}">{{cidade}}</option>
+                                {{/each}}
+                            </select>
+                                
+                                    <p>Enredereço</p>
+                            <input type="text" placeholder="Av/Rua" name="endereco">
+                                    <p>Número</p>
+                            <input type="text" placeholder="numero" name="numero">
+                                    <p>Complemento</p>
+                            <input type="text" placeholder="casa, apartamento ou referencia" name="complemento">
+                                    <p>Meio de pagamento</p>
+                            <select name="pagamento" id="pagamento">
+                                    <option value="credito">credito</option>
+                                    <option value="debito">debito</option>
+                                    <option value="dinheiro">dinheiro</option>
+                            </select>
+                            <p id="troco">Troco para:</p>
+                            <input type="text" id="campoTroco" placeholder="troco" name="troco">
+                            <input type="text" name="total" value="{{../totalFormatado}}" hidden>
+                            <button>Finalizar</button>
+                        </form>
+                        
+                    {{/each}}
+                </div>
+
+            </div>
+
+    </header>
+</body>
+</html>
+</body>
+    <script src="/views/js/finalizar.js"></script>
+</html>

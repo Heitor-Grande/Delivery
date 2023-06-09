@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/det_pedido.css">
+
+    <title>Document</title>
+</head>
+<body>{{#each user}}
+    <header>
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/Meus/{{token}}">Voltar</a>
+            </div>
+       {{/each}}
+          
+            <div class="menu">
+                <p>Meus pedidos</p>
+                 <div class="pedido">
+
+                
+                        <div id="detalhes">
+                            {{#each pedido}}
+                            <h4>Endereço</h4>
+                            <p>{{cidade}} - {{endereco}} {{numero}} {{complemento}}</p>
+
+                            <h4>Resumo</h4>
+                            <p>Taxa de entrega: R${{../taxa}}</p>
+                            <p>Total: R${{totalAbsoluto}}</p>
+                            <p>Meio de pagamento: {{dinheiro}}</p>
+                            <p>{{../troco}}</p>
+                            {{/each}}
+                        </div>
+
+
+                    {{#each pedido_detalhes}}
+                    <img src="/views/uploads/produto/{{imagem_produto}}" alt="">
+                           <p>{{nome_produto}}</p>
+                            <p>R${{preco_produto}}</p>
+                            <p>Unidades: {{quantidade_produto}}</p>
+                    {{/each}}
+                    <a href="/del/{{token_pedido}}" id="delete">Deletar pedido</a>
+
+                    {{#each pedido}}
+                    <input type="text" id="statusPedido" value="{{status}}" hidden>
+                    <a href="/finalizar/pedido/{{token_pedido}}/{{token_user}}" id="finalizar">Finalizar pedido</a>
+                    {{/each}}
+
+                </div>
+            </div>
+
+    </header>
+    <script src="/views/js/det_pedido.js"></script>
+</body>
+</html>
+</body>
+</html>

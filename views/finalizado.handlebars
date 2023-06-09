@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/finalizando.css">
+    <title>Delivery</title>
+</head>
+<body>  {{#each user}}
+         <header>
+
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="horario">
+                <p>O seu pedido entrou em status de "Processando", estamos com ele na 
+                    fila e logo ele será entregue no endereço cadastrado. Obrigado!</p>
+            </div>
+
+            <a href="/{{token}}">
+                <div class="menu">
+                <p>Continuar</p>
+            </div>
+            </a>
+
+    </header>
+    {{/each}}
+</body>
+</html>

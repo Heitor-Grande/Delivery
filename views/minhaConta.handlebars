@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/minhaConta.css">
+    <title>Delivery</title>
+</head>
+<body>
+    <header>
+                {{#each infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+        
+        {{#each user}}
+
+            <div id="voltar">
+                <a href="/{{token}}">Voltar</a>
+           </div>
+
+        {{/each}}
+
+        
+
+            
+            <div class="menu">
+                    {{#each user}}
+                <form action="/att/User/{{token}}" method="post">
+                   
+                         <p>Nome completo</p>
+                <input type="text" value="{{nome}}" placeholder="seu nome completo" name="nome" id="nome">
+                        <p>Telefone</p>
+                <input type="text" value="{{telefone}}" placeholder="telefone" name="telefone">
+                        <p>E-mail</p>
+                <input type="text" value="{{email}}" placeholder="seu email de preferencia" name="email" id="email">
+                        <p>Senha</p>
+                <input type="password" value="" placeholder="sua senha de preferencia" name="senha" id="senha">
+                        <p>Confirmar senha</p>
+                <input type="password" placeholder="confirme sua senha de preferencia" name="senhaConfirmar" id="senhaConfirmar"> 
+
+                <button id="btnCad">Atualizar</button>
+                   
+                </form>
+                    {{/each}}
+            </div>
+
+    </header>
+</body>
+        <script src="/views/js/criarConta.js"></script>
+</html>

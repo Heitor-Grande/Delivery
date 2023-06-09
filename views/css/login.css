@@ -1,0 +1,77 @@
+header a{
+    color: black;
+    text-decoration: none;
+}
+header h4{
+    color: #B4B4A0;
+    text-align: center;
+}
+#horario{
+    text-align: center;
+    margin-top: 5%;
+}
+.menu{
+
+    display: block;
+    margin-top: 10%;
+    border-radius: 5px;
+    width: 80%;
+    padding: 2.5%;
+    text-align: center;
+    background-color: #FFBD00;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu input{
+    font-size: medium;
+    outline: 0;
+    padding: 1.5%;
+}
+.menu button{
+    display: block;
+    border-radius: 5px;
+    margin-top: 5%;
+    width: 80%;
+    padding: 2.5%;
+    text-align: center;
+    color: #FFBD00;
+    background-color:#646464;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: medium;
+}
+#voltar{
+    margin-top: 5%;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#voltar a{
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: #FFBD00;
+}
+#msg{
+    color: red;
+}
+#rec{
+    display: block;
+    margin-top: 5%;
+    color: blue;
+}
+
+@media(max-width: 1024px){
+    header{
+        width: 90%;
+    }
+}
+
+@media(max-width: 320px){
+    header{
+        margin: 0%;
+        width: 100%;
+    }
+}

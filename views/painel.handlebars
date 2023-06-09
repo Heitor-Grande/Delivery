@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/painel.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            {{#each infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            {{#each admin}}
+            <div id="voltar">
+                <a href="/menu/{{loginUser}}/{{senhaUser}}">Voltar</a>
+           </div>
+           
+           <div id="painel">
+                <form action="/pegar/status/pedido/{{loginUser}}/{{senhaUser}}" method="post">
+                    <select name="status">
+                    <option value="Processando">Processando</option>
+                    <option value="Cancelado">Cancelado</option>
+                    <option value="Saiu para entrega">Saiu para entrega</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+                <button>Procurar</button>
+                </form>
+           </div>
+           {{/each}}
+
+        {{#each pedido}}
+            <div class="menu">
+                <div class="pedidoDet">
+                    <p>{{dataReal}}</p>
+                    <p>{{token_pedido}}</p>
+                    <p>{{cidade}} - {{endereco}} {{numero}} {{complemento}}</p>
+                    <p class="trocado">Troco para: R${{troco}}</p>
+                    <p>Total: R${{totalAbsoluto}}</p>
+                    <p class="pagamento">{{pagamento}}</p>
+                    <p>{{status}}</p>
+                    <input type="text" class="status" value="{{status}}" hidden>
+
+                    {{#each ../admin}}
+                    <a href="/{{../token_pedido}}/saiuEntrega/{{loginUser}}/{{senhaUser}}" class="saiu">Saindo para entrega</a>
+                    <a href="/{{../token_pedido}}/cancelado/{{loginUser}}/{{senhaUser}}" class="cancelado">Cancelar</a>
+                    <a href="/{{../token_pedido}}/finalizado/{{loginUser}}/{{senhaUser}}" class="finalizado">Finalizado</a>
+                    {{/each}}
+
+                </div>
+            </div>
+        {{/each}}
+
+
+
+    </header>
+</body>
+<script src="/views/js/painel.js"></script>
+</html>

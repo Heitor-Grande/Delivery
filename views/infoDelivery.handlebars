@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/minhaConta.css">
+    <title>Delivery</title>
+</head>
+<body>{{#each admin}}
+    <header>
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/menu/{{loginUser}}/{{senhaUser}}">Voltar</a>
+           </div>
+
+            
+            <div class="menu">
+                <form action="/Att/{{loginUser}}/{{senhaUser}}" method="post">
+                   {{#each ../InfoDelivery}}
+                        <p>Nome completo</p>
+                <input type="text" value="{{nome}}" name="nome" placeholder="nome do estabelecimento">
+                        <p>Endereço</p>
+                <input type="text" value="{{endereco}}" placeholder="endereço do estabelecimento" name="endereco">
+                        <p>Horario de abertura</p>
+                <input type="time" value="{{horarioAbertura}}" name="horarioAbertura">
+                        <p>Horario de fechamento</p>
+                <input type="time" value="{{horarioFechamento}}" name="horarioFechamento">
+                        <p>Mensagem</p>
+                <input type="text" value="{{mensagem}}" name="mensagem" placeholder="mensagem da tela incial">
+                        <p>Informações</p>
+                <input type="text" value="{{informacao}}" name="informacao" placeholder="informações adicionais">
+                        <p>Taxa de entrega</p>
+                <input type="text" value="{{taxaEntrega}}" placeholder="00.00" name="taxa">
+                        <p>Status</p>
+                <select name="status">
+                        <option value="{{status}}">{{status}}</option>
+                        <option value="Aberto">Aberto</option>
+                        <option value="Fechado">Fechado</option>
+                </select>
+
+                <button id="btnCad">Cadastrar</button>
+                    {{/each}}
+                </form>
+
+            </div>
+
+    </header>
+    {{/each}}
+</body>
+</html>

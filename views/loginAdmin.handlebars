@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/login.css">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+            {{#each infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+
+           <div id="voltar">
+                <a href="/">Voltar</a>
+           </div>
+
+            <div class="menu">
+                <form action="/log" method="post">
+                    <p>Login</p>
+                <input type="text" placeholder="email cadastrado" name="login">
+                    <p>Senha</p>
+                <input type="password" placeholder="senha vinculada" name="senha">
+
+                <button>Entrar</button>
+                </form>
+            </div>
+    </header>
+</body>
+</html>

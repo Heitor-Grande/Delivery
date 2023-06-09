@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/views/css/categorias.css">
+
+    <title>Document</title>
+</head>
+<body>{{#each user}}
+    <header>
+
+            {{#each ../infoDelivery}}
+            <h4>{{nome}}</h4>
+            {{/each}}
+
+            <div id="voltar">
+                <a href="/{{token}}">Voltar</a>
+            </div>
+
+
+            {{#each ../categoria}}
+            <a href="/produtos/{{categoria}}/{{../token}}/0">
+                <div class="menu">
+                    
+                <img src="/views/uploads/categoria/{{imagem}}" alt="">
+                <p>{{categoria}}</p>
+            </div>
+            </a>
+            {{/each}}
+           
+    </header>
+    {{/each}}
+</body>
+</html>
