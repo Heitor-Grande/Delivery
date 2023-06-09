@@ -29,7 +29,7 @@ recConta.post("/envio/rec/senha", function(req, res){
                 res.send(erro)
             }
             else if(user.length == 1){
-                database.all(`select * from infoDelivery`, function(erro, infoDelivery){
+                database.all(`select * from infoDelivery`, async function(erro, infoDelivery){
                     if(erro){
                         res.send(erro)
                     }
@@ -49,14 +49,14 @@ recConta.post("/envio/rec/senha", function(req, res){
                             }
 
                             //config envio(remetente)
-                            emitente.sendMail(email, function(erro){
-                            if(erro){
+                            await emitente.sendMail(email, function (erro) {
+                            if (erro) {
                                 res.send(erro)
                             }
-                            else{
+                            else {
                                 res.send(`Email com a senha de recuperação enviado para: ${emailRec}.`)
                             }
-                            })
+                        })
                     }
                 })
             }   
