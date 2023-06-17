@@ -26,8 +26,8 @@
                 <img src="/views/uploads/produto/{{imagem}}" alt="">
 
 
-
-                <p class="nomeProduto">{{nome}}</p>
+                <div class="info">
+                    <p class="nomeProduto">{{nome}}</p>
                 <p class="descProduto">{{desc}}</p>
 
                 <form action="/CriarPedido/{{../token}}/{{id}}" method="post">
@@ -42,6 +42,8 @@
 
                     <button id="addPedido">Adicionar ao pedido</button>
                 </form>
+                    <br>
+                </div>
             </div>
         {{/each}}
     {{/each}}

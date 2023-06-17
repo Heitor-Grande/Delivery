@@ -14,6 +14,8 @@ admin.get("/admin/delivery/entrar", function(req, res){
 
 //admin login post
 admin.post("/log", function(req, res){
+
+
     database.all(`select * from admin where loginUser = "${req.body.login}" 
     and senhaUser = "${req.body.senha}"`, function(erro, admin){
         if(erro){
@@ -23,9 +25,10 @@ admin.post("/log", function(req, res){
             res.redirect(`/menu/${req.body.login}/${req.body.senha}`)
         }
         else{
-            res.redirect("/loginAdmin")
+            res.send("dados incorretos")
         }
     })
+    
 })
 
 //tela menuAdmin

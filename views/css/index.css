@@ -45,7 +45,7 @@ header h4{
 }
 
 #setup_button{
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
     color: #1D1D1D;

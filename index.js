@@ -76,7 +76,6 @@ app.get("/getMin/:login/:senha", admin)
 app.post("/update/credAdmin/:login/:senha",admin)
 app.get("/painel/controle/:login/:senha", admin)
 
-
 //categoria
 const categoria = require("./controllers/categorias")
 app.get("/cad/categoria/:loginUser/:senhaUser", categoria)

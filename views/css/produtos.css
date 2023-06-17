@@ -72,6 +72,14 @@ header h4{
     color: #FFBD00;
     width: 5%;
 }
+.info{
+    background-color: white;
+    border-radius: 10px;
+}
+.info p{
+    color: #646464;
+    padding: 1%;
+}
 
 
 

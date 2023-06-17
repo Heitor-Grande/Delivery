@@ -19,15 +19,17 @@
            </div>
 
             <div class="menu">
-                <form action="/log" method="post">
+                <form action="/log" method="post" id="formLogin">
                     <p>Login</p>
-                <input type="text" placeholder="email cadastrado" name="login">
+                <input type="text" placeholder="login" name="login" id="login">
                     <p>Senha</p>
-                <input type="password" placeholder="senha vinculada" name="senha">
+                <input type="password" placeholder="senha" name="senha" id="senha">
+                <p id="msg"></p>
 
                 <button>Entrar</button>
                 </form>
             </div>
     </header>
 </body>
+<script src="/views/js/loginAdmin.js"></script>
 </html>

@@ -8,20 +8,20 @@ const nodemailer = require("nodemailer")
 //database
 const database = require("../models/dbConnection")
 
+//config email emitente
+let emitente = nodemailer.createTransport({
+        host: "smtp-mail.outlook.com",
+        port: 587,
+        secure: false,
+        auth: {
+        user: "dev3wcontato@outlook.com",
+        pass: "CorsaRally<2004>"
+        }
+    })
+
 recConta.post("/envio/rec/senha", function(req, res){
 
     let emailRec = req.body.emailRec
-
-        //config email emitente
-        let emitente = nodemailer.createTransport({
-                host: "smtp-mail.outlook.com",
-                port: 587,
-                secure: false,
-                auth: {
-                user: "dev3wcontato@outlook.com",
-                pass: "CorsaRally<2004>"
-                }
-        })
 
         //req dados delivery e user
         database.all(`select * from user where email = "${emailRec}"`, function(erro, user){
@@ -49,7 +49,7 @@ recConta.post("/envio/rec/senha", function(req, res){
                             }
 
                             //config envio(remetente)
-                            await emitente.sendMail(email, function (erro) {
+                            emitente.sendMail(email, function (erro) {
                             if (erro) {
                                 res.send(erro)
                             }
@@ -64,8 +64,6 @@ recConta.post("/envio/rec/senha", function(req, res){
                 res.send("Email não encontrado em nosso sistema.")
             }
         })
-
-        
 })
 
 module.exports = recConta;

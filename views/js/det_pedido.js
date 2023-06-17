@@ -8,6 +8,18 @@ if(statusPedido.value == "Processando"){
     finalizar.style.cssText = "display: none;"
     delet.style.cssText = "display: none;"
 }
+else if(statusPedido.value == "Cancelado"){
+    finalizar.style.cssText = "display: none;"
+    delet.style.cssText = "display: none;"
+}
+else if(statusPedido.value == "Finalizado"){
+    finalizar.style.cssText = "display: none;"
+    delet.style.cssText = "display: none;"
+}
+else if(statusPedido.value == "Saiu para entrega"){
+    finalizar.style.cssText = "display: none;"
+    delet.style.cssText = "display: none;"
+}
 else if(statusPedido.value == "Em aberto"){
     detalhes.style.cssText = "display: none;"
 }

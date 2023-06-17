@@ -3,7 +3,8 @@ const fs = require("fs")
 
 const zip = require("zip-a-folder")
 
-function bkp10min(){
+//a cada 12 horas faz o bkp
+function bkp12horas(){
     fs.copyFile("models/dbDelivery.db", "bkp/dbDelivery.db", function(erro){
         if(erro){
             console.log(erro)
@@ -22,4 +23,4 @@ function bkp10min(){
     })
 }
 
-module.exports = bkp10min()
+module.exports = bkp12horas()

@@ -42,6 +42,7 @@ header h4{
     margin-right: auto;
     display: block;
     width: 80%;
+    height: 100px;
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -86,6 +87,15 @@ header h4{
     color: black;
     background-color: #FFBD00;
 }
+.info{
+    background-color: white;
+    border-radius: 10px;
+}
+.info p{
+    color: #646464;
+}
+
+
 
 @media(max-width: 1024px){
     header{

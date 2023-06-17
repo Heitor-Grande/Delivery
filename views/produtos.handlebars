@@ -22,9 +22,11 @@
             <a href="/det_produto/{{id}}/{{../pagAtual}}">
             <div class="menu">
                 <img src="/views/uploads/produto/{{imagem}}" alt="">
-                <p class="nomeProduto">{{nome}}</p>
-                <p class="descProduto">{{desc}}</p>
-                <p class="precoProduto">R${{preco}}</p>
+                <div class="info">
+                    <p class="nomeProduto">{{nome}}</p>
+                    <p class="descProduto">{{desc}}</p>
+                    <p class="precoProduto">R${{preco}}</p>
+                </div>
             </div>
             </a>
             {{/each}}
